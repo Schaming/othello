@@ -1,0 +1,12 @@
+<% 8.times do |y_pos| %>
+	<% 8.times do |x_pos| %>
+		<div class="square row_<%=x_pos%>">
+			<% if Move.where(x: x_pos, y: y_pos, is_black: false).any? %>
+				<div class="piece white"></div>
+			<% end %>
+			<% if Move.where(x: x_pos, y: y_pos, is_black: true).any? %>
+				<div class="piece black"></div>
+			<% end %>	
+		</div>
+	<% end %>
+<% end %>
